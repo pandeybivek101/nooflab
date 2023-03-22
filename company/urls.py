@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path
 from company.views import *
 from company import views
-urlpatterns = [
 
+urlpatterns = [
+    path('get-data/', FetchDataView.as_view(), name='home')
 ]
