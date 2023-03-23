@@ -1,8 +1,11 @@
+import requests
+from .models import Company
+from rest_framework import status
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Company
-import requests
+
+
 
 
 # Create your views here.
@@ -76,5 +79,5 @@ class FetchDataView(APIView):
             #fetching and storing the data based on the postcode
             fetchStore = self.fetch_remote_data(pCode, messages)
 
-        return Response({'message': fetchStore})
+        return Response({'message': fetchStore}, status=status.HTTP_200_OK)
         
