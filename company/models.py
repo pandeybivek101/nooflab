@@ -11,6 +11,7 @@ class Company(models.Model):
     name = models.CharField(max_length=100)
     registrationDate = models.DateField()
     companyForm = models.CharField(max_length=10)
+    postalcode = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
