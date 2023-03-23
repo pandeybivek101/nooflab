@@ -4,12 +4,13 @@ from rest_framework import status
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .serializers import CompanySerializer
 
 
 
 
 # Create your views here.
-class FetchDataView(APIView):
+class FetchAndStoreDataView(APIView):
 
 
     """
@@ -81,3 +82,20 @@ class FetchDataView(APIView):
 
         return Response({'message': fetchStore}, status=status.HTTP_200_OK)
         
+
+
+
+
+
+class GetDataView(APIView):
+    serializer_class = CompanySerializer
+
+    def get(self, request, postalCode):
+
+        #quering data based on the postal code 
+        companyData = Company.objects.filter(postalcode = postalCode)
+
+        #getting the serialized data from the database
+        serializer=self.serializer_class(companyData, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
