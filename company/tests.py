@@ -2,7 +2,7 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
 from .models import Company
-from .serializers import CompanySerializer
+
 # Create your tests here.
 
 
@@ -27,9 +27,9 @@ class GetDataViewTestCase(TestCase):
         # Test retrieving data for a valid postal code
         response = self.client.get('/postal_codes/00011/companies')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 2) # Expected 3 companies with postal code 00100
+        self.assertEqual(len(response.data), 2) # Expected 2 companies with postal code 00011
         
         # Test retrieving data for an invalid postal code
         response = self.client.get('/postal_codes/6666666/companies')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.data), 0) # Expected no companies with postal code 99999
+        self.assertEqual(len(response.data), 0) # Expected no companies with postal code 6666666
