@@ -19,6 +19,6 @@ from company.views import *
 from company import views
 
 urlpatterns = [
-    path('postal_codes/fetch/companies', FetchAndStoreDataView.as_view(), name='home'),
+    path('postal_codes/fetch/companies', FetchAndStoreDataView.as_view(), name='fetch-store'),
     path('postal_codes/<str:postalCode>/companies', GetDataView.as_view(), name='get-data')
 ]

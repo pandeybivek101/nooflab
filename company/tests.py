@@ -1,12 +1,13 @@
-from django.test import TestCase
-from rest_framework.test import APIClient
-from rest_framework import status
 from .models import Company
+from django.urls import reverse
+from rest_framework import status
+from rest_framework.test import APIClient
+from rest_framework.test import APITestCase
 
 # Create your tests here.
 
 
-class GetDataViewTestCase(TestCase):
+class GetDataViewTestCase(APITestCase):
     
     def setUp(self):
         self.client = APIClient()
@@ -33,3 +34,27 @@ class GetDataViewTestCase(TestCase):
         response = self.client.get('/postal_codes/6666666/companies')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data), 0) # Expected no companies with postal code 6666666
+
+
+
+
+class FetchAndStoreDataViewTestCase(APITestCase):
+
+    def test_fetch_and_store_data(self):
+        # Set up the test data
+        postCodes = ["02100", "00140"]
+        
+        # Call the API
+        url = reverse('fetch-store')
+        response = self.client.get(url)
+
+        # Check the response status code and content
+        self.assertEqual(response.status_code, 200)
+
+        self.assertEqual(len(response.data['message']), 10)
+
+        # Check that the data has been stored in the database
+        for postCode in postCodes:
+            self.assertTrue(Company.objects.filter(postalcode=postCode).exists())
+
+
