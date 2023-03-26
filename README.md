@@ -11,7 +11,7 @@
     based on my case.
 
     cd /home/bivek/Desktop
-    
+
     virtualenv demo   
 
 
@@ -23,6 +23,7 @@
     based on my case.
 
     cd /home/bivek/Desktop/demo
+    
     git clone https://github.com/pandeybivek101/nooflab.git
 
 
