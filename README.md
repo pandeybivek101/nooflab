@@ -34,6 +34,7 @@
     based on my case.
 
     cd /home/bivek/Desktop/demo
+    
     source bin/activate
 
 4. Installation of all dependencies and packages required for the project. All the requirements are included in requirements.txt file, you can find requirements.txt file inside the project folder
@@ -43,7 +44,7 @@
     based on my case.
 
     cd /home/bivek/Desktop/demo/nooflab
-    
+
     pip install -r requirements.txt
 
     also make sure your virtual environment is activated while installing dependencies and packages.
