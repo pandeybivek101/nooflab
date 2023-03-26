@@ -53,7 +53,9 @@
     create the database tables from the models folder to do so. use the given command
 
     cd /home/bivek/Desktop/demo/nooflab
+
     python manage.py makemigrations
+
     python manage.py migrate
 
 
@@ -74,7 +76,7 @@
     http://localhost:8000/postal_codes/fetch/companies
 
 9. Endpoints for getting the stored data 
-    http://localhost:8000/postal_codes/<str:postalCode>/companies
+    http://localhost:8000/postal_codes/02100/companies
 
 
 
