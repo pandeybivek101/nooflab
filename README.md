@@ -43,6 +43,7 @@
     based on my case.
 
     cd /home/bivek/Desktop/demo/nooflab
+    
     pip install -r requirements.txt
 
     also make sure your virtual environment is activated while installing dependencies and packages.
