@@ -6,7 +6,7 @@
 
 
 2. create virtual environment using the command
-    virtualenv <name of virtual environment>
+    virtualenv <"name of virtual environment">
 
     based on my case.
 
@@ -17,7 +17,7 @@
 4. After creating demo virtual environment there should be a folder named demo. Go into that folder and clone the project from the github. make sure the the main project folder must be inside demo folder along
     with other two folders(lib and bin)
 
-    cd <path to virtual environment>
+    cd <"path to virtual environment">
 
     based on my case.
 
@@ -29,7 +29,7 @@
     
     Go into the demo that folder there should be 3 folders lib, bin and nooflab(project folder), you can activate the virtual environment inside demo folder. To do so use below mentioned code, below mentioned command is for linux devices if you are using window or mac OS please check the given link( https://linuxhint.com/activate-virtualenv-windows/ ,   https://mnzel.medium.com/how-to-activate-python-venv-on-a-mac-a8fa1c3cb511)
 
-    cd <path to demo>
+    cd <"path to demo">
 
     based on my case.
 
@@ -38,7 +38,7 @@
 
 4. Installation of all dependencies and packages required for the project. All the requirements are included in requirements.txt file, you can find requirements.txt file inside the project folder
     
-    cd <path to demo>/<project name>
+    cd <"path to demo">/<"project name">
     
     based on my case.
 
