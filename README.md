@@ -64,7 +64,8 @@
 
 
 6. Database configuration
-    Hence all kind of databases can be configured, in this project I have used sqlite database which is also the default database of django. After executing the above command django will automatically generate the db.sqlite file inside the project folder.
+
+    Hence all kind of databases can be configured in this project, I have used sqlite database which is also the default database of django. After executing the above command django will automatically generate the db.sqlite file inside the project folder.
 
 7. Running the local server.
 
